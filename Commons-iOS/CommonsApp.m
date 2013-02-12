@@ -85,9 +85,8 @@ static CommonsApp *singleton_;
         [fm removeItemAtPath:path error:&error];
 
         // Start storing it!
-        [self prepareFile:fileName data:data onCompletion:^() {
-            // woo
-        }];
+        [self prepareFile:fileName data:data];
+        // after insertion we'll get an async notification
 
         return YES;
     } else {
@@ -321,7 +320,7 @@ static CommonsApp *singleton_;
             stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 }
 
-- (void)beginUpload:(FileUpload *)record completion:(void(^)())completionBlock onFailure:(void (^)(NSError *))failureBlock
+- (MWPromise *)beginUpload:(FileUpload *)record
 {
     NSString *fileName = [self filenameForTitle:record.title type:record.fileType];
     NSString *filePath = [self filePath:record.localFile];
@@ -329,69 +328,70 @@ static CommonsApp *singleton_;
     
     _currentUploadOp = [self startApi];
     
-    [_currentUploadOp loginWithUsername:self.username
-                            andPassword:self.password
-                  withCookiePersistence:YES
-                           onCompletion:^(MWApiResult *loginResult) {
-                               
-                               NSLog(@"login: %@", loginResult.data[@"login"][@"result"]);
-                               
-                               if (_currentUploadOp.isLoggedIn) {
-                                   
-                                   record.progress = @0.0f;
-                                   
-                                   // Progress block
-                                   void (^progress)(NSInteger, NSInteger) = ^(NSInteger bytesSent, NSInteger bytesTotal) {
-                                       record.progress = [NSNumber numberWithFloat:(float)bytesSent / (float)bytesTotal];
-                                   };
-                                   
-                                   // Completion block
-                                   void (^complete)(MWApiResult *) = ^(MWApiResult *uploadResult) {
-                                       NSLog(@"upload: %@", uploadResult.data);
-                                       if (completionBlock != nil) {
-                                           NSDictionary *upload = uploadResult.data[@"upload"];
-                                           NSDictionary *imageinfo = upload[@"imageinfo"];
-                                           if ([upload[@"result"] isEqualToString:@"Success"]) {
-                                               record.title = [self cleanupTitle:upload[@"filename"]];
+    MWDeferred *deferred = [[MWDeferred alloc] init];
+    MWPromise *login = [_currentUploadOp loginWithUsername:self.username
+                                                andPassword:self.password
+                                      withCookiePersistence:YES];
+    [login done:^(MWApiResult *loginResult) {
+       
+       NSLog(@"login: %@", loginResult.data[@"login"][@"result"]);
+       
+       if (_currentUploadOp.isLoggedIn) {
+           
+           record.progress = @0.0f;
+           
+           MWPromise *upload = [_currentUploadOp uploadFile:fileName
+                                               withFileData:fileData
+                                                       text:[self formatDescription:record]
+                                                    comment:@"Uploaded with Commons for iOS"];
 
-                                               // Unfortunately we didn't get the thumbnail URL. :P
-                                               // Ask for it in a second request...
-                                               NSLog(@"fetching thumb URL after upload");
-                                               [record saveThumbnailOnCompletion:completionBlock
-                                                                       onFailure:failureBlock];
-                                           } else {
-                                               NSLog(@"failed upload!");
-                                               // whaaaaaaat?
-                                               record.progress = @0.0f;
-                                               [self saveData];
+           [upload progress:^(NSDictionary *dict) {
+               // Progress block
+               NSNumber *bytesSent = dict[@"sent"];
+               NSNumber *bytesTotal = dict[@"total"];
+               record.progress = [NSNumber numberWithFloat:bytesSent.floatValue / bytesTotal.floatValue];
+           }];
+           
+           // Completion block
+           [upload done:^(MWApiResult *uploadResult) {
+               NSLog(@"upload: %@", uploadResult.data);
+               NSDictionary *upload = uploadResult.data[@"upload"];
+               NSDictionary *imageinfo = upload[@"imageinfo"];
+               if ([upload[@"result"] isEqualToString:@"Success"]) {
+                   record.title = [self cleanupTitle:upload[@"filename"]];
 
-                                               NSError *err = nil; // fixme create a sane error object?
-                                               failureBlock(err);
-                                           }
-                                       }
-                                   };
-                                   
-                                   // Failure block
-                                   void (^failure)(NSError *) = ^(NSError *error) {
-                                       NSLog(@"failed upload!");
-                                       record.progress = @0.0f;
-                                   };
-                                   
-                                   [_currentUploadOp uploadFile:fileName
-                                                   withFileData:fileData
-                                                           text:[self formatDescription:record]
-                                                        comment:@"Uploaded with Commons for iOS"
-                                                   onCompletion:complete
-                                                     onProgress:progress
-                                                      onFailure:failure];
-                                   
-                               } else {
-                                   
-                                   NSLog(@"not logged in");
-                               }
-                               
-                           }
-                              onFailure:failureBlock];
+                   // Unfortunately we didn't get the thumbnail URL. :P
+                   // Ask for it in a second request...
+                   NSLog(@"fetching thumb URL after upload");
+                   MWPromise *saveThumb = [record saveThumbnail];
+                   [saveThumb done:^(MWApiResult *result) {
+                       [deferred resolve:record];
+                   }];
+               } else {
+                   NSLog(@"failed upload!");
+                   // whaaaaaaat?
+                   record.progress = @0.0f;
+                   [self saveData];
+
+                   NSError *err = nil; // fixme create a sane error object?
+                   [deferred reject:err];
+               }
+           }];
+           
+           // Failure block
+           [upload fail:^(NSError *error) {
+               NSLog(@"failed upload!");
+               record.progress = @0.0f;
+               [deferred reject:error];
+           }];
+       } else {
+           NSLog(@"not logged in");
+       }
+    }];
+    [login fail:^(NSError *err) {
+        [deferred reject:err];
+    }];
+    return deferred.promise;
 }
 
 - (NSString *)formatDescription:(FileUpload *)record
