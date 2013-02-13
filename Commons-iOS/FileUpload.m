@@ -86,7 +86,6 @@
             NSLog(@"got thumb URL %@", self.thumbnailURL);
         }
         [app saveData];
-        block();
         [deferred resolve:result];
     }];
     [fetch fail:^(NSError *err) {

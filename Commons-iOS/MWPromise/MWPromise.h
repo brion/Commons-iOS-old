@@ -11,6 +11,7 @@
 #import <Foundation/Foundation.h>
 
 typedef void (^MWPromiseBlock)(id arg);
+typedef id (^MWPromiseFilterBlock)(id arg);
 
 @interface MWPromise : NSObject
 
@@ -25,5 +26,8 @@ typedef void (^MWPromiseBlock)(id arg);
 // Convenient multiple-callback methods
 - (void)done:(MWPromiseBlock)doneCallback fail:(MWPromiseBlock)failCallback;
 - (void)done:(MWPromiseBlock)doneCallback fail:(MWPromiseBlock)failCallback progress:(MWPromiseBlock)progressCallback;
+
+- (void)pipe:(id)deferred;
+- (void)pipe:(id)deferred withFilter:(MWPromiseFilterBlock)filterCallback;
 
 @end

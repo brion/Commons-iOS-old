@@ -51,8 +51,7 @@
 - (MWPromise *)prepareImage:(NSDictionary *)info;
 - (void)deleteUploadRecord:(FileUpload *)record;
 
-- (void)refreshHistoryOnCompletion:(void(^)())completionBlock;
-- (void)refreshHistory;
+- (MWPromise *)refreshHistory;
 
 - (NSString *)cleanupTitle:(NSString *)title;
 

@@ -57,5 +57,34 @@
     [deferred_ done:doneCallback fail:failCallback progress:progressCallback];
 }
 
+- (void)pipe:(id)deferred
+{
+    MWDeferred *chained = deferred;
+    [self done:^(id arg) {
+        [chained resolve:arg];
+    }];
+    [self progress:^(id arg) {
+        [chained progress:arg];
+    }];
+    [self fail:^(id arg) {
+        [chained reject:arg];
+    }];
+}
+
+- (void)pipe:(id)deferred withFilter:(MWPromiseFilterBlock)filterCallback
+{
+    MWDeferred *chained = deferred;
+    [self done:^(id arg) {
+        id retval = filterCallback(arg);
+        [chained resolve:retval];
+    }];
+    [self progress:^(id arg) {
+        [chained progress:arg];
+    }];
+    [self fail:^(id arg) {
+        [chained reject:arg];
+    }];
+}
+
 
 @end
