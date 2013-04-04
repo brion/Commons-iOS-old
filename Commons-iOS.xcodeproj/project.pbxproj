@@ -171,6 +171,13 @@
 		D4AFF27516B886FD003D96F3 /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AFF27416B886FD003D96F3 /* DetailTableViewController.m */; };
 		D4B83E1F16BC8B4000ABAF94 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B83E1E16BC8B4000ABAF94 /* WebViewController.m */; };
 		D4B83E2216BC950900ABAF94 /* BrowserHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B83E2116BC950900ABAF94 /* BrowserHelper.m */; };
+		D4BA0020170E348900F6A039 /* SplashScreen1.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BA001D170E348900F6A039 /* SplashScreen1.png */; };
+		D4BA0021170E348900F6A039 /* SplashScreen2.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BA001E170E348900F6A039 /* SplashScreen2.png */; };
+		D4BA0022170E348900F6A039 /* SplashScreen3.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BA001F170E348900F6A039 /* SplashScreen3.png */; };
+		D4BA0026170E352100F6A039 /* SplashScreen1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BA0023170E352100F6A039 /* SplashScreen1@2x.png */; };
+		D4BA0027170E352100F6A039 /* SplashScreen2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BA0024170E352100F6A039 /* SplashScreen2@2x.png */; };
+		D4BA0028170E352100F6A039 /* SplashScreen3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4BA0025170E352100F6A039 /* SplashScreen3@2x.png */; };
+		D4BA002E170E3E8D00F6A039 /* TutorialPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4BA002D170E3E8D00F6A039 /* TutorialPageViewController.m */; };
 		D4C037101700C38100AA2537 /* messages-af.json in Resources */ = {isa = PBXBuildFile; fileRef = D4C036F21700C38000AA2537 /* messages-af.json */; };
 		D4C037111700C38100AA2537 /* messages-ar.json in Resources */ = {isa = PBXBuildFile; fileRef = D4C036F31700C38000AA2537 /* messages-ar.json */; };
 		D4C037121700C38100AA2537 /* messages-ast.json in Resources */ = {isa = PBXBuildFile; fileRef = D4C036F41700C38000AA2537 /* messages-ast.json */; };
@@ -346,6 +353,14 @@
 		D4B83E1E16BC8B4000ABAF94 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
 		D4B83E2016BC950900ABAF94 /* BrowserHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BrowserHelper.h; sourceTree = "<group>"; };
 		D4B83E2116BC950900ABAF94 /* BrowserHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BrowserHelper.m; sourceTree = "<group>"; };
+		D4BA001D170E348900F6A039 /* SplashScreen1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SplashScreen1.png; sourceTree = "<group>"; };
+		D4BA001E170E348900F6A039 /* SplashScreen2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SplashScreen2.png; sourceTree = "<group>"; };
+		D4BA001F170E348900F6A039 /* SplashScreen3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SplashScreen3.png; sourceTree = "<group>"; };
+		D4BA0023170E352100F6A039 /* SplashScreen1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SplashScreen1@2x.png"; sourceTree = "<group>"; };
+		D4BA0024170E352100F6A039 /* SplashScreen2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SplashScreen2@2x.png"; sourceTree = "<group>"; };
+		D4BA0025170E352100F6A039 /* SplashScreen3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SplashScreen3@2x.png"; sourceTree = "<group>"; };
+		D4BA002C170E3E8D00F6A039 /* TutorialPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TutorialPageViewController.h; sourceTree = "<group>"; };
+		D4BA002D170E3E8D00F6A039 /* TutorialPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TutorialPageViewController.m; sourceTree = "<group>"; };
 		D4C036F21700C38000AA2537 /* messages-af.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "messages-af.json"; path = "messages/messages-af.json"; sourceTree = "<group>"; };
 		D4C036F31700C38000AA2537 /* messages-ar.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "messages-ar.json"; path = "messages/messages-ar.json"; sourceTree = "<group>"; };
 		D4C036F41700C38000AA2537 /* messages-ast.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = "messages-ast.json"; path = "messages/messages-ast.json"; sourceTree = "<group>"; };
@@ -609,6 +624,12 @@
 		D4086177169B760800D6ACB0 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D4BA001D170E348900F6A039 /* SplashScreen1.png */,
+				D4BA0023170E352100F6A039 /* SplashScreen1@2x.png */,
+				D4BA001E170E348900F6A039 /* SplashScreen2.png */,
+				D4BA0024170E352100F6A039 /* SplashScreen2@2x.png */,
+				D4BA001F170E348900F6A039 /* SplashScreen3.png */,
+				D4BA0025170E352100F6A039 /* SplashScreen3@2x.png */,
 				D485AA6B1706525900D555ED /* toolbar-view.png */,
 				D485AA6C1706525900D555ED /* toolbar-view@2x.png */,
 				D4C0372E1700F29600AA2537 /* toolbar-back.png */,
@@ -709,6 +730,8 @@
 				D41D281216C19C4D00BC3ABE /* ImageListCell.m */,
 				D41D281516C19CE100BC3ABE /* MyUploadsViewController.h */,
 				D41D281616C19CE100BC3ABE /* MyUploadsViewController.m */,
+				D4BA002C170E3E8D00F6A039 /* TutorialPageViewController.h */,
+				D4BA002D170E3E8D00F6A039 /* TutorialPageViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -1016,6 +1039,12 @@
 				D4DE80EB170A3761005F7580 /* messages-pl.json in Resources */,
 				D4DE80EC170A3761005F7580 /* messages-ro.json in Resources */,
 				D4DE80ED170A3761005F7580 /* messages-vi.json in Resources */,
+				D4BA0020170E348900F6A039 /* SplashScreen1.png in Resources */,
+				D4BA0021170E348900F6A039 /* SplashScreen2.png in Resources */,
+				D4BA0022170E348900F6A039 /* SplashScreen3.png in Resources */,
+				D4BA0026170E352100F6A039 /* SplashScreen1@2x.png in Resources */,
+				D4BA0027170E352100F6A039 /* SplashScreen2@2x.png in Resources */,
+				D4BA0028170E352100F6A039 /* SplashScreen3@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1163,6 +1192,7 @@
 				D44DDD3F16CC4D6000318FBF /* MWPromise.m in Sources */,
 				655BF5EF16C1052D00B22299 /* StorageTools.m in Sources */,
 				D47FFB8816E53FE900B9FD90 /* ThumbFetcher.m in Sources */,
+				D4BA002E170E3E8D00F6A039 /* TutorialPageViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
