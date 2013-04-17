@@ -16,7 +16,6 @@
 @interface DetailTableViewController ()
 
     - (void)hideKeyboard;
-    - (void)openLicense;
 
 @end
 
@@ -150,9 +149,6 @@
     
     tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(focusOnDescriptionTextView)];
     [self.descCell addGestureRecognizer:tapGesture];
-
-    tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(openLicense)];
-    [self.licenseCell addGestureRecognizer:tapGesture];
     
 }
 
@@ -250,11 +246,6 @@
 {
     
     [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (void)openLicense
-{
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://creativecommons.org/licenses/by-sa/3.0/"]];
 }
 
 - (IBAction)openWikiPageButtonPushed:(id)sender
