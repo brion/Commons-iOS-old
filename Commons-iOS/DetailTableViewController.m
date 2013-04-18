@@ -12,6 +12,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "MWI18N/MWMessage.h"
 #import "MyUploadsViewController.h"
+#import "CategoryListTableViewController.h"
 
 @interface DetailTableViewController ()
 
@@ -292,6 +293,13 @@
             
         }
         
+    } else if ([segue.identifier isEqualToString:@"CategoryListSegue"]) {
+        CategoryListTableViewController *view = [segue destinationViewController];
+        //view.categoryList = self.selectedRecord.categoryList;
+        view.categoryList = [[NSMutableArray alloc] init];
+        view.categoryList[0] = @"Foo";
+        view.categoryList[1] = @"Bar";
+        view.categoryList[2] = @"Baz";
     }
     
 }
