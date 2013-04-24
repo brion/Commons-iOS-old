@@ -184,6 +184,8 @@
 		D485AA6D1706525900D555ED /* toolbar-view.png in Resources */ = {isa = PBXBuildFile; fileRef = D485AA6B1706525900D555ED /* toolbar-view.png */; };
 		D485AA6E1706525900D555ED /* toolbar-view@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D485AA6C1706525900D555ED /* toolbar-view@2x.png */; };
 		D4896B5116B5C97D009A35FA /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4896B5016B5C97D009A35FA /* AssetsLibrary.framework */; };
+		D48BB91F17289CBE003100CE /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48BB91E17289CBE003100CE /* CategoryCell.xib */; };
+		D48BB92117289CEF003100CE /* AddCategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D48BB92017289CEF003100CE /* AddCategoryCell.xib */; };
 		D4AFF27516B886FD003D96F3 /* DetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4AFF27416B886FD003D96F3 /* DetailTableViewController.m */; };
 		D4B1CDFD1721E248008E1B31 /* CategorySearchTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B1CDFC1721E248008E1B31 /* CategorySearchTableViewController.m */; };
 		D4B83E1F16BC8B4000ABAF94 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4B83E1E16BC8B4000ABAF94 /* WebViewController.m */; };
@@ -224,7 +226,6 @@
 		D4C037351700F29600AA2537 /* toolbar-forward@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D4C037311700F29600AA2537 /* toolbar-forward@2x.png */; };
 		D4C08F2A16AF47300069172D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C08F2916AF47300069172D /* Security.framework */; };
 		D4C5B4191720966C00C40532 /* LicenseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C5B4181720966C00C40532 /* LicenseTableViewController.m */; };
-		D4C5B41C1720A3D700C40532 /* CategoryListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D4C5B41B1720A3D700C40532 /* CategoryListTableViewController.m */; };
 		D4D0E1F2169BA5E2003047A8 /* MWHttp.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D0E1E9169BA5E2003047A8 /* MWHttp.m */; };
 		D4D0E1F3169BA5E2003047A8 /* MWApi.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D0E1EA169BA5E2003047A8 /* MWApi.m */; };
 		D4D0E1F4169BA5E2003047A8 /* MWApiMultipartRequestBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = D4D0E1EB169BA5E2003047A8 /* MWApiMultipartRequestBuilder.m */; };
@@ -381,6 +382,8 @@
 		D485AA6B1706525900D555ED /* toolbar-view.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-view.png"; sourceTree = "<group>"; };
 		D485AA6C1706525900D555ED /* toolbar-view@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "toolbar-view@2x.png"; sourceTree = "<group>"; };
 		D4896B5016B5C97D009A35FA /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		D48BB91E17289CBE003100CE /* CategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
+		D48BB92017289CEF003100CE /* AddCategoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddCategoryCell.xib; sourceTree = "<group>"; };
 		D4AFF27316B886FD003D96F3 /* DetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailTableViewController.h; sourceTree = "<group>"; };
 		D4AFF27416B886FD003D96F3 /* DetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailTableViewController.m; sourceTree = "<group>"; };
 		D4B1CDFB1721E248008E1B31 /* CategorySearchTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategorySearchTableViewController.h; sourceTree = "<group>"; };
@@ -426,8 +429,6 @@
 		D4C08F2916AF47300069172D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D4C5B4171720966C00C40532 /* LicenseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LicenseTableViewController.h; sourceTree = "<group>"; };
 		D4C5B4181720966C00C40532 /* LicenseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LicenseTableViewController.m; sourceTree = "<group>"; };
-		D4C5B41A1720A3D700C40532 /* CategoryListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryListTableViewController.h; sourceTree = "<group>"; };
-		D4C5B41B1720A3D700C40532 /* CategoryListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryListTableViewController.m; sourceTree = "<group>"; };
 		D4C5B4201720BCD700C40532 /* FileUpload 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "FileUpload 2.xcdatamodel"; sourceTree = "<group>"; };
 		D4D0E1E9169BA5E2003047A8 /* MWHttp.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MWHttp.m; path = mwapi/MWHttp.m; sourceTree = "<group>"; };
 		D4D0E1EA169BA5E2003047A8 /* MWApi.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MWApi.m; path = mwapi/MWApi.m; sourceTree = "<group>"; };
@@ -658,6 +659,8 @@
 				D450A0E216B34ADD00D1D1E2 /* CommonsApp.h */,
 				D450A0E316B34ADD00D1D1E2 /* CommonsApp.m */,
 				D4086188169B760800D6ACB0 /* MainStoryboard.storyboard */,
+				D48BB91E17289CBE003100CE /* CategoryCell.xib */,
+				D48BB92017289CEF003100CE /* AddCategoryCell.xib */,
 			);
 			path = "Commons-iOS";
 			sourceTree = "<group>";
@@ -773,8 +776,6 @@
 				3067546E170FF9D900A4BD8F /* SettingsViewController.m */,
 				D4C5B4171720966C00C40532 /* LicenseTableViewController.h */,
 				D4C5B4181720966C00C40532 /* LicenseTableViewController.m */,
-				D4C5B41A1720A3D700C40532 /* CategoryListTableViewController.h */,
-				D4C5B41B1720A3D700C40532 /* CategoryListTableViewController.m */,
 				D4B1CDFB1721E248008E1B31 /* CategorySearchTableViewController.h */,
 				D4B1CDFC1721E248008E1B31 /* CategorySearchTableViewController.m */,
 			);
@@ -1102,6 +1103,8 @@
 				D475B294171C750D00AA81C9 /* messages-uk.json in Resources */,
 				D475B295171C750D00AA81C9 /* messages-ur.json in Resources */,
 				D475B296171C750D00AA81C9 /* messages-zh-hant.json in Resources */,
+				D48BB91F17289CBE003100CE /* CategoryCell.xib in Resources */,
+				D48BB92117289CEF003100CE /* AddCategoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1256,7 +1259,6 @@
 				040860BE1713939200D3290B /* GrayscaleImageView.m in Sources */,
 				04023FED1718B13A00165309 /* AboutViewController.m in Sources */,
 				D4C5B4191720966C00C40532 /* LicenseTableViewController.m in Sources */,
-				D4C5B41C1720A3D700C40532 /* CategoryListTableViewController.m in Sources */,
 				D4B1CDFD1721E248008E1B31 /* CategorySearchTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
